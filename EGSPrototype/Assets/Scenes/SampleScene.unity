@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 87011723}
   - component: {fileID: 87011722}
   - component: {fileID: 87011721}
+  - component: {fileID: 87011726}
   m_Layer: 0
   m_Name: PlanetCube
   m_TagString: Untagged
@@ -231,6 +232,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &87011726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87011720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bc5a7590b735e4f859834f059a9531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 9.81
+  boundaryDistance: {x: 5, y: 5, z: 5}
+  innerDistance: 5
+  innerFalloffDistance: 5
+  outerDistance: 100
+  outerFalloffDistance: 125
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,9 +488,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d970bea256ed4449a5b04a0473285b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInputSpace: {fileID: 1270936423}
   maxSpeed: 20
   maxAcceleration: 10
-  bounciness: 0.5
+  maxAirAcceleration: 1
+  jumpHeight: 2
+  maxAirJumps: 0
+  maxGroundAngle: 25
+  maxStairsAngle: 50
+  maxSnapSpeed: 100
+  probeDistance: 1
+  probeMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stairsMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!135 &1270936420
 SphereCollider:
   m_ObjectHideFlags: 0
