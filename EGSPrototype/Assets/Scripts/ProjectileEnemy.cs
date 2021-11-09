@@ -16,17 +16,14 @@ public class ProjectileEnemy : Enemy
     void Update()
     {
         Vector3 diff = (playerTransform.position - transform.position);
-        float mag = diff.magnitude;
-
-        float sqMag = diff.sqrMagnitude;
-
         Vector3 dir = diff.normalized;
+        float sqMag = diff.sqrMagnitude;
+        
         pointer.position = transform.position + dir * radius;
         
         if (sqMag < radius * radius)
         {
             Shoot();
-            // SAME EXACT THING BUT WITOUT SQ ROOT
         }
     }
 
