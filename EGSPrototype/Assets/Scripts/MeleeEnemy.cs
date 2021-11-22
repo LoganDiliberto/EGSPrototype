@@ -13,11 +13,26 @@ public class MeleeEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
+        Vector3 gravity = CustomGravity.GetGravity(body.position, out upAxis);
         moveTowardsPlayer();
     }
 
     void moveTowardsPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, movespeed);
+        {
+            transform.LookAt(playerTransform);
+
+            if (Vector3.Distance(transform.position, playerTransform.position) >= minAgroDist)
+            {
+
+                transform.position += transform.forward * movespeed * Time.deltaTime;
+
+                if (Vector3.Distance(transform.position, playerTransform.position) <= maxAgoDist)
+                {
+                    //Here Call any function U want Like Shoot at here or something
+                }
+
+            }
+        }
     }
 }
