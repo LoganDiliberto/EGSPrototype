@@ -13,7 +13,7 @@ public class MeleeEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        Vector3 gravity = CustomGravity.GetGravity(body.position, out upAxis);
+        //Vector3 gravity = CustomGravity.GetGravity(body.position, out upAxis);
         moveTowardsPlayer();
     }
 

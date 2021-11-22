@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 
-public class MovingSphere : MonoBehaviour {
+public class MovingSphere : MonoBehaviour
+{
 
+	
 	[SerializeField]
 	Transform playerInputSpace = default;
 
