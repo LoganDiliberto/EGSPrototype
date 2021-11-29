@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class MeleeEnemy : Enemy
     {
         //Vector3 gravity = CustomGravity.GetGravity(body.position, out upAxis);
         moveTowardsPlayer();
+        checkStatus();
     }
 
     void moveTowardsPlayer()
@@ -34,5 +36,10 @@ public class MeleeEnemy : Enemy
 
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
     }
 }

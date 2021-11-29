@@ -29,4 +29,15 @@ public class Player : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.CompareTag("Enemy"))
+        {
+            GameObject enemyThatIHit = collision.gameObject;
+            Enemy e = enemyThatIHit.GetComponent<Enemy>();
+            TakeDamage(e.damage);
+            Debug.Log("Taking Damage from enemy");
+        }
+    }
 }
